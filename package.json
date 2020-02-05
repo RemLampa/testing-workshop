@@ -45,5 +45,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
   }
 }

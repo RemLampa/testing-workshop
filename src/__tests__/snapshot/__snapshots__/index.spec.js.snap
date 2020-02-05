@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SNAPSHOT TESTS SearchForm Component should render properly 1`] = `
+<Styled(div)
+  p={3}
+  sx={
+    Object {
+      "maxWidth": 1024,
+      "mx": "auto",
+      "px": 3,
+    }
+  }
+>
+  <ForwardRef
+    color="primary"
+    fontSize={
+      Array [
+        5,
+        6,
+        7,
+      ]
+    }
+    p={3}
+    textAlign="center"
+  >
+    GitHub Respositories Search
+  </ForwardRef>
+  <Styled(div)
+    p={3}
+  >
+    <Formik
+      initialValues={
+        Object {
+          "order": "desc",
+          "query": "",
+          "sort": "",
+        }
+      }
+      onSubmit={[Function]}
+    >
+      <Component />
+    </Formik>
+  </Styled(div)>
+  <Styled(div)
+    p={3}
+  >
+    <Styled(div)
+      flexWrap="wrap"
+      justifyContent="center"
+    />
+  </Styled(div)>
+</Styled(div)>
+`;

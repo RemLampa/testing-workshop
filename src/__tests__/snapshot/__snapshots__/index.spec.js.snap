@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SNAPSHOT TESTS OrderSelect Component should render properly 1`] = `
+<Styled(div)
+  p={3}
+>
+  <ForwardRef
+    htmlFor="order"
+  >
+    Order
+  </ForwardRef>
+  <ForwardRef
+    id="some-id"
+    name="some-name"
+    onSubmit={[Function]}
+    p={2}
+    required={true}
+  >
+    <option
+      value="desc"
+    >
+      Desc
+    </option>
+    <option
+      value="asc"
+    >
+      Asc
+    </option>
+  </ForwardRef>
+</Styled(div)>
+`;
+
 exports[`SNAPSHOT TESTS QueryField Component should render properly 1`] = `
 <Styled(div)
   p={3}

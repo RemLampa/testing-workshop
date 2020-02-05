@@ -4,7 +4,8 @@ import toJson from "enzyme-to-json";
 
 import SearchForm, {
   QueryField,
-  SortSelect
+  SortSelect,
+  OrderSelect
 } from "../../components/SearchForm";
 
 describe("SNAPSHOT TESTS", () => {
@@ -47,6 +48,24 @@ describe("SNAPSHOT TESTS", () => {
       };
 
       const element = shallow(<SortSelect field={field} {...props} />);
+
+      expect(toJson(element)).toMatchSnapshot();
+    });
+  });
+
+  describe("OrderSelect Component", () => {
+    it("should render properly", () => {
+      const field = {
+        id: "some-id",
+        name: "some-name"
+      };
+
+      const props = {
+        required: true,
+        onSubmit: () => {}
+      };
+
+      const element = shallow(<OrderSelect field={field} {...props} />);
 
       expect(toJson(element)).toMatchSnapshot();
     });

@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SNAPSHOT TESTS QueryField Component should render properly 1`] = `
+<Styled(div)
+  p={3}
+>
+  <ForwardRef
+    htmlFor="query"
+  >
+    Keywords
+  </ForwardRef>
+  <ForwardRef
+    id="some-id"
+    name="some-name"
+    onSubmit={[Function]}
+    required={true}
+  />
+</Styled(div)>
+`;
+
 exports[`SNAPSHOT TESTS SearchForm Component should render properly 1`] = `
 <Styled(div)
   p={3}

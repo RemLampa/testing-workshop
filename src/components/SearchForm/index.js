@@ -4,14 +4,14 @@ import { Formik, Form, Field } from "formik";
 import { Box, Flex, Heading, Button, Card, Image, Text } from "rebass";
 import { Label, Input, Select } from "@rebass/forms";
 
-const QueryField = ({ field, ...props }) => (
+export const QueryField = ({ field, ...props }) => (
   <Box p={3}>
     <Label htmlFor="query">Keywords</Label>
     <Input {...field} {...props} />
   </Box>
 );
 
-const SortSelect = ({ field, ...props }) => (
+export const SortSelect = ({ field, ...props }) => (
   <Box p={3}>
     <Label htmlFor="sort">Sort</Label>
     <Select {...field} {...props}>
@@ -24,7 +24,7 @@ const SortSelect = ({ field, ...props }) => (
   </Box>
 );
 
-const OrderSelect = ({ field, ...props }) => (
+export const OrderSelect = ({ field, ...props }) => (
   <Box p={3}>
     <Label htmlFor="order">Order</Label>
     <Select p={2} {...field} {...props}>

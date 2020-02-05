@@ -100,6 +100,1621 @@ exports[`SNAPSHOT TESTS SearchForm Component should render properly 1`] = `
 </Styled(div)>
 `;
 
+exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon form submission 1`] = `
+<SearchForm>
+  <Styled(div)
+    p={3}
+    sx={
+      Object {
+        "maxWidth": 1024,
+        "mx": "auto",
+        "px": 3,
+      }
+    }
+  >
+    <div
+      className="css-1f9zi90"
+    >
+      <ForwardRef
+        color="primary"
+        fontSize={
+          Array [
+            5,
+            6,
+            7,
+          ]
+        }
+        p={3}
+        textAlign="center"
+      >
+        <Styled(div)
+          __css={
+            Object {
+              "fontFamily": "heading",
+              "fontSize": 4,
+              "fontWeight": "heading",
+              "lineHeight": "heading",
+            }
+          }
+          as="h2"
+          color="primary"
+          fontSize={
+            Array [
+              5,
+              6,
+              7,
+            ]
+          }
+          p={3}
+          textAlign="center"
+          tx="text"
+          variant="heading"
+        >
+          <h2
+            className="css-1g9ayor"
+          >
+            GitHub Respositories Search
+          </h2>
+        </Styled(div)>
+      </ForwardRef>
+      <Styled(div)
+        p={3}
+      >
+        <div
+          className="css-1dpv2l8"
+        >
+          <Formik
+            initialValues={
+              Object {
+                "order": "desc",
+                "query": "",
+                "sort": "",
+              }
+            }
+            onSubmit={[Function]}
+          >
+            <Form>
+              <form
+                action="#"
+                onReset={[Function]}
+                onSubmit={[Function]}
+              >
+                <Styled(div)
+                  alignItems="flex-end"
+                  flexWrap="wrap"
+                  justifyContent="center"
+                >
+                  <div
+                    className="css-1c9akt1"
+                  >
+                    <Field
+                      component={[Function]}
+                      id="query"
+                      name="query"
+                      placeholder="javascript"
+                      required={true}
+                    >
+                      <QueryField
+                        field={
+                          Object {
+                            "name": "query",
+                            "onBlur": [Function],
+                            "onChange": [Function],
+                            "value": "Shoes",
+                          }
+                        }
+                        form={
+                          Object {
+                            "dirty": true,
+                            "errors": Object {},
+                            "getFieldHelpers": [Function],
+                            "getFieldMeta": [Function],
+                            "getFieldProps": [Function],
+                            "handleBlur": [Function],
+                            "handleChange": [Function],
+                            "handleReset": [Function],
+                            "handleSubmit": [Function],
+                            "initialErrors": Object {},
+                            "initialStatus": undefined,
+                            "initialTouched": Object {},
+                            "initialValues": Object {
+                              "order": "desc",
+                              "query": "",
+                              "sort": "",
+                            },
+                            "isSubmitting": false,
+                            "isValid": true,
+                            "isValidating": false,
+                            "registerField": [Function],
+                            "resetForm": [Function],
+                            "setErrors": [Function],
+                            "setFieldError": [Function],
+                            "setFieldTouched": [Function],
+                            "setFieldValue": [Function],
+                            "setFormikState": [Function],
+                            "setStatus": [Function],
+                            "setSubmitting": [Function],
+                            "setTouched": [Function],
+                            "setValues": [Function],
+                            "status": undefined,
+                            "submitCount": 1,
+                            "submitForm": [Function],
+                            "touched": Object {
+                              "order": true,
+                              "query": true,
+                              "sort": true,
+                            },
+                            "unregisterField": [Function],
+                            "validateField": [Function],
+                            "validateForm": [Function],
+                            "validateOnBlur": true,
+                            "validateOnChange": true,
+                            "validateOnMount": false,
+                            "values": Object {
+                              "order": "asc",
+                              "query": "Shoes",
+                              "sort": "forks",
+                            },
+                          }
+                        }
+                        id="query"
+                        placeholder="javascript"
+                        required={true}
+                      >
+                        <Styled(div)
+                          p={3}
+                        >
+                          <div
+                            className="css-1dpv2l8"
+                          >
+                            <ForwardRef
+                              htmlFor="query"
+                            >
+                              <Styled(div)
+                                __css={
+                                  Object {
+                                    "width": "100%",
+                                  }
+                                }
+                                as="label"
+                                htmlFor="query"
+                                tx="forms"
+                                variant="label"
+                              >
+                                <label
+                                  className="css-knfhfe"
+                                  htmlFor="query"
+                                >
+                                  Keywords
+                                </label>
+                              </Styled(div)>
+                            </ForwardRef>
+                            <ForwardRef
+                              form={
+                                Object {
+                                  "dirty": true,
+                                  "errors": Object {},
+                                  "getFieldHelpers": [Function],
+                                  "getFieldMeta": [Function],
+                                  "getFieldProps": [Function],
+                                  "handleBlur": [Function],
+                                  "handleChange": [Function],
+                                  "handleReset": [Function],
+                                  "handleSubmit": [Function],
+                                  "initialErrors": Object {},
+                                  "initialStatus": undefined,
+                                  "initialTouched": Object {},
+                                  "initialValues": Object {
+                                    "order": "desc",
+                                    "query": "",
+                                    "sort": "",
+                                  },
+                                  "isSubmitting": false,
+                                  "isValid": true,
+                                  "isValidating": false,
+                                  "registerField": [Function],
+                                  "resetForm": [Function],
+                                  "setErrors": [Function],
+                                  "setFieldError": [Function],
+                                  "setFieldTouched": [Function],
+                                  "setFieldValue": [Function],
+                                  "setFormikState": [Function],
+                                  "setStatus": [Function],
+                                  "setSubmitting": [Function],
+                                  "setTouched": [Function],
+                                  "setValues": [Function],
+                                  "status": undefined,
+                                  "submitCount": 1,
+                                  "submitForm": [Function],
+                                  "touched": Object {
+                                    "order": true,
+                                    "query": true,
+                                    "sort": true,
+                                  },
+                                  "unregisterField": [Function],
+                                  "validateField": [Function],
+                                  "validateForm": [Function],
+                                  "validateOnBlur": true,
+                                  "validateOnChange": true,
+                                  "validateOnMount": false,
+                                  "values": Object {
+                                    "order": "asc",
+                                    "query": "Shoes",
+                                    "sort": "forks",
+                                  },
+                                }
+                              }
+                              id="query"
+                              name="query"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              placeholder="javascript"
+                              required={true}
+                              value="Shoes"
+                            >
+                              <Styled(div)
+                                __css={
+                                  Object {
+                                    "appearance": "none",
+                                    "bg": "transparent",
+                                    "border": "1px solid",
+                                    "borderRadius": "default",
+                                    "color": "inherit",
+                                    "display": "block",
+                                    "fontSize": "inherit",
+                                    "lineHeight": "inherit",
+                                    "p": 2,
+                                    "width": "100%",
+                                  }
+                                }
+                                as="input"
+                                form={
+                                  Object {
+                                    "dirty": true,
+                                    "errors": Object {},
+                                    "getFieldHelpers": [Function],
+                                    "getFieldMeta": [Function],
+                                    "getFieldProps": [Function],
+                                    "handleBlur": [Function],
+                                    "handleChange": [Function],
+                                    "handleReset": [Function],
+                                    "handleSubmit": [Function],
+                                    "initialErrors": Object {},
+                                    "initialStatus": undefined,
+                                    "initialTouched": Object {},
+                                    "initialValues": Object {
+                                      "order": "desc",
+                                      "query": "",
+                                      "sort": "",
+                                    },
+                                    "isSubmitting": false,
+                                    "isValid": true,
+                                    "isValidating": false,
+                                    "registerField": [Function],
+                                    "resetForm": [Function],
+                                    "setErrors": [Function],
+                                    "setFieldError": [Function],
+                                    "setFieldTouched": [Function],
+                                    "setFieldValue": [Function],
+                                    "setFormikState": [Function],
+                                    "setStatus": [Function],
+                                    "setSubmitting": [Function],
+                                    "setTouched": [Function],
+                                    "setValues": [Function],
+                                    "status": undefined,
+                                    "submitCount": 1,
+                                    "submitForm": [Function],
+                                    "touched": Object {
+                                      "order": true,
+                                      "query": true,
+                                      "sort": true,
+                                    },
+                                    "unregisterField": [Function],
+                                    "validateField": [Function],
+                                    "validateForm": [Function],
+                                    "validateOnBlur": true,
+                                    "validateOnChange": true,
+                                    "validateOnMount": false,
+                                    "values": Object {
+                                      "order": "asc",
+                                      "query": "Shoes",
+                                      "sort": "forks",
+                                    },
+                                  }
+                                }
+                                id="query"
+                                name="query"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                placeholder="javascript"
+                                required={true}
+                                tx="forms"
+                                type="text"
+                                value="Shoes"
+                                variant="input"
+                              >
+                                <input
+                                  className="css-4y926w"
+                                  form={
+                                    Object {
+                                      "dirty": true,
+                                      "errors": Object {},
+                                      "getFieldHelpers": [Function],
+                                      "getFieldMeta": [Function],
+                                      "getFieldProps": [Function],
+                                      "handleBlur": [Function],
+                                      "handleChange": [Function],
+                                      "handleReset": [Function],
+                                      "handleSubmit": [Function],
+                                      "initialErrors": Object {},
+                                      "initialStatus": undefined,
+                                      "initialTouched": Object {},
+                                      "initialValues": Object {
+                                        "order": "desc",
+                                        "query": "",
+                                        "sort": "",
+                                      },
+                                      "isSubmitting": false,
+                                      "isValid": true,
+                                      "isValidating": false,
+                                      "registerField": [Function],
+                                      "resetForm": [Function],
+                                      "setErrors": [Function],
+                                      "setFieldError": [Function],
+                                      "setFieldTouched": [Function],
+                                      "setFieldValue": [Function],
+                                      "setFormikState": [Function],
+                                      "setStatus": [Function],
+                                      "setSubmitting": [Function],
+                                      "setTouched": [Function],
+                                      "setValues": [Function],
+                                      "status": undefined,
+                                      "submitCount": 1,
+                                      "submitForm": [Function],
+                                      "touched": Object {
+                                        "order": true,
+                                        "query": true,
+                                        "sort": true,
+                                      },
+                                      "unregisterField": [Function],
+                                      "validateField": [Function],
+                                      "validateForm": [Function],
+                                      "validateOnBlur": true,
+                                      "validateOnChange": true,
+                                      "validateOnMount": false,
+                                      "values": Object {
+                                        "order": "asc",
+                                        "query": "Shoes",
+                                        "sort": "forks",
+                                      },
+                                    }
+                                  }
+                                  id="query"
+                                  name="query"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  placeholder="javascript"
+                                  required={true}
+                                  type="text"
+                                  value="Shoes"
+                                />
+                              </Styled(div)>
+                            </ForwardRef>
+                          </div>
+                        </Styled(div)>
+                      </QueryField>
+                    </Field>
+                    <Field
+                      component={[Function]}
+                      id="sort"
+                      name="sort"
+                    >
+                      <SortSelect
+                        field={
+                          Object {
+                            "name": "sort",
+                            "onBlur": [Function],
+                            "onChange": [Function],
+                            "value": "forks",
+                          }
+                        }
+                        form={
+                          Object {
+                            "dirty": true,
+                            "errors": Object {},
+                            "getFieldHelpers": [Function],
+                            "getFieldMeta": [Function],
+                            "getFieldProps": [Function],
+                            "handleBlur": [Function],
+                            "handleChange": [Function],
+                            "handleReset": [Function],
+                            "handleSubmit": [Function],
+                            "initialErrors": Object {},
+                            "initialStatus": undefined,
+                            "initialTouched": Object {},
+                            "initialValues": Object {
+                              "order": "desc",
+                              "query": "",
+                              "sort": "",
+                            },
+                            "isSubmitting": false,
+                            "isValid": true,
+                            "isValidating": false,
+                            "registerField": [Function],
+                            "resetForm": [Function],
+                            "setErrors": [Function],
+                            "setFieldError": [Function],
+                            "setFieldTouched": [Function],
+                            "setFieldValue": [Function],
+                            "setFormikState": [Function],
+                            "setStatus": [Function],
+                            "setSubmitting": [Function],
+                            "setTouched": [Function],
+                            "setValues": [Function],
+                            "status": undefined,
+                            "submitCount": 1,
+                            "submitForm": [Function],
+                            "touched": Object {
+                              "order": true,
+                              "query": true,
+                              "sort": true,
+                            },
+                            "unregisterField": [Function],
+                            "validateField": [Function],
+                            "validateForm": [Function],
+                            "validateOnBlur": true,
+                            "validateOnChange": true,
+                            "validateOnMount": false,
+                            "values": Object {
+                              "order": "asc",
+                              "query": "Shoes",
+                              "sort": "forks",
+                            },
+                          }
+                        }
+                        id="sort"
+                      >
+                        <Styled(div)
+                          p={3}
+                        >
+                          <div
+                            className="css-1dpv2l8"
+                          >
+                            <ForwardRef
+                              htmlFor="sort"
+                            >
+                              <Styled(div)
+                                __css={
+                                  Object {
+                                    "width": "100%",
+                                  }
+                                }
+                                as="label"
+                                htmlFor="sort"
+                                tx="forms"
+                                variant="label"
+                              >
+                                <label
+                                  className="css-knfhfe"
+                                  htmlFor="sort"
+                                >
+                                  Sort
+                                </label>
+                              </Styled(div)>
+                            </ForwardRef>
+                            <ForwardRef
+                              form={
+                                Object {
+                                  "dirty": true,
+                                  "errors": Object {},
+                                  "getFieldHelpers": [Function],
+                                  "getFieldMeta": [Function],
+                                  "getFieldProps": [Function],
+                                  "handleBlur": [Function],
+                                  "handleChange": [Function],
+                                  "handleReset": [Function],
+                                  "handleSubmit": [Function],
+                                  "initialErrors": Object {},
+                                  "initialStatus": undefined,
+                                  "initialTouched": Object {},
+                                  "initialValues": Object {
+                                    "order": "desc",
+                                    "query": "",
+                                    "sort": "",
+                                  },
+                                  "isSubmitting": false,
+                                  "isValid": true,
+                                  "isValidating": false,
+                                  "registerField": [Function],
+                                  "resetForm": [Function],
+                                  "setErrors": [Function],
+                                  "setFieldError": [Function],
+                                  "setFieldTouched": [Function],
+                                  "setFieldValue": [Function],
+                                  "setFormikState": [Function],
+                                  "setStatus": [Function],
+                                  "setSubmitting": [Function],
+                                  "setTouched": [Function],
+                                  "setValues": [Function],
+                                  "status": undefined,
+                                  "submitCount": 1,
+                                  "submitForm": [Function],
+                                  "touched": Object {
+                                    "order": true,
+                                    "query": true,
+                                    "sort": true,
+                                  },
+                                  "unregisterField": [Function],
+                                  "validateField": [Function],
+                                  "validateForm": [Function],
+                                  "validateOnBlur": true,
+                                  "validateOnChange": true,
+                                  "validateOnMount": false,
+                                  "values": Object {
+                                    "order": "asc",
+                                    "query": "Shoes",
+                                    "sort": "forks",
+                                  },
+                                }
+                              }
+                              id="sort"
+                              name="sort"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              value="forks"
+                            >
+                              <Styled(div)>
+                                <div
+                                  className="css-4cffwv"
+                                >
+                                  <Styled(div)
+                                    __css={
+                                      Object {
+                                        "appearance": "none",
+                                        "bg": "transparent",
+                                        "border": "1px solid",
+                                        "borderRadius": "default",
+                                        "color": "inherit",
+                                        "display": "block",
+                                        "fontSize": "inherit",
+                                        "lineHeight": "inherit",
+                                        "p": 2,
+                                        "width": "100%",
+                                      }
+                                    }
+                                    as="select"
+                                    form={
+                                      Object {
+                                        "dirty": true,
+                                        "errors": Object {},
+                                        "getFieldHelpers": [Function],
+                                        "getFieldMeta": [Function],
+                                        "getFieldProps": [Function],
+                                        "handleBlur": [Function],
+                                        "handleChange": [Function],
+                                        "handleReset": [Function],
+                                        "handleSubmit": [Function],
+                                        "initialErrors": Object {},
+                                        "initialStatus": undefined,
+                                        "initialTouched": Object {},
+                                        "initialValues": Object {
+                                          "order": "desc",
+                                          "query": "",
+                                          "sort": "",
+                                        },
+                                        "isSubmitting": false,
+                                        "isValid": true,
+                                        "isValidating": false,
+                                        "registerField": [Function],
+                                        "resetForm": [Function],
+                                        "setErrors": [Function],
+                                        "setFieldError": [Function],
+                                        "setFieldTouched": [Function],
+                                        "setFieldValue": [Function],
+                                        "setFormikState": [Function],
+                                        "setStatus": [Function],
+                                        "setSubmitting": [Function],
+                                        "setTouched": [Function],
+                                        "setValues": [Function],
+                                        "status": undefined,
+                                        "submitCount": 1,
+                                        "submitForm": [Function],
+                                        "touched": Object {
+                                          "order": true,
+                                          "query": true,
+                                          "sort": true,
+                                        },
+                                        "unregisterField": [Function],
+                                        "validateField": [Function],
+                                        "validateForm": [Function],
+                                        "validateOnBlur": true,
+                                        "validateOnChange": true,
+                                        "validateOnMount": false,
+                                        "values": Object {
+                                          "order": "asc",
+                                          "query": "Shoes",
+                                          "sort": "forks",
+                                        },
+                                      }
+                                    }
+                                    id="sort"
+                                    name="sort"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    tx="forms"
+                                    value="forks"
+                                    variant="select"
+                                  >
+                                    <select
+                                      className="css-4y926w"
+                                      form={
+                                        Object {
+                                          "dirty": true,
+                                          "errors": Object {},
+                                          "getFieldHelpers": [Function],
+                                          "getFieldMeta": [Function],
+                                          "getFieldProps": [Function],
+                                          "handleBlur": [Function],
+                                          "handleChange": [Function],
+                                          "handleReset": [Function],
+                                          "handleSubmit": [Function],
+                                          "initialErrors": Object {},
+                                          "initialStatus": undefined,
+                                          "initialTouched": Object {},
+                                          "initialValues": Object {
+                                            "order": "desc",
+                                            "query": "",
+                                            "sort": "",
+                                          },
+                                          "isSubmitting": false,
+                                          "isValid": true,
+                                          "isValidating": false,
+                                          "registerField": [Function],
+                                          "resetForm": [Function],
+                                          "setErrors": [Function],
+                                          "setFieldError": [Function],
+                                          "setFieldTouched": [Function],
+                                          "setFieldValue": [Function],
+                                          "setFormikState": [Function],
+                                          "setStatus": [Function],
+                                          "setSubmitting": [Function],
+                                          "setTouched": [Function],
+                                          "setValues": [Function],
+                                          "status": undefined,
+                                          "submitCount": 1,
+                                          "submitForm": [Function],
+                                          "touched": Object {
+                                            "order": true,
+                                            "query": true,
+                                            "sort": true,
+                                          },
+                                          "unregisterField": [Function],
+                                          "validateField": [Function],
+                                          "validateForm": [Function],
+                                          "validateOnBlur": true,
+                                          "validateOnChange": true,
+                                          "validateOnMount": false,
+                                          "values": Object {
+                                            "order": "asc",
+                                            "query": "Shoes",
+                                            "sort": "forks",
+                                          },
+                                        }
+                                      }
+                                      id="sort"
+                                      name="sort"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      value="forks"
+                                    >
+                                      <option
+                                        value=""
+                                      >
+                                        Best Match
+                                      </option>
+                                      <option
+                                        value="stars"
+                                      >
+                                        Stars
+                                      </option>
+                                      <option
+                                        value="forks"
+                                      >
+                                        Forks
+                                      </option>
+                                      <option
+                                        value="help-wanted-issues"
+                                      >
+                                        Help Wanted Issues
+                                      </option>
+                                      <option
+                                        value="updated"
+                                      >
+                                        Updated
+                                      </option>
+                                    </select>
+                                  </Styled(div)>
+                                  <DownArrow
+                                    sx={
+                                      Object {
+                                        "alignSelf": "center",
+                                        "ml": -28,
+                                        "pointerEvents": "none",
+                                      }
+                                    }
+                                  >
+                                    <SVG
+                                      sx={
+                                        Object {
+                                          "alignSelf": "center",
+                                          "ml": -28,
+                                          "pointerEvents": "none",
+                                        }
+                                      }
+                                    >
+                                      <Styled(div)
+                                        as="svg"
+                                        fill="currentcolor"
+                                        height={24}
+                                        sx={
+                                          Object {
+                                            "alignSelf": "center",
+                                            "ml": -28,
+                                            "pointerEvents": "none",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                        width={24}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <svg
+                                          className="css-6ibwe0"
+                                          fill="currentcolor"
+                                          viewBox="0 0 24 24"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M7 10l5 5 5-5z"
+                                          />
+                                        </svg>
+                                      </Styled(div)>
+                                    </SVG>
+                                  </DownArrow>
+                                </div>
+                              </Styled(div)>
+                            </ForwardRef>
+                          </div>
+                        </Styled(div)>
+                      </SortSelect>
+                    </Field>
+                    <Field
+                      component={[Function]}
+                      id="order"
+                      name="order"
+                    >
+                      <OrderSelect
+                        field={
+                          Object {
+                            "name": "order",
+                            "onBlur": [Function],
+                            "onChange": [Function],
+                            "value": "asc",
+                          }
+                        }
+                        form={
+                          Object {
+                            "dirty": true,
+                            "errors": Object {},
+                            "getFieldHelpers": [Function],
+                            "getFieldMeta": [Function],
+                            "getFieldProps": [Function],
+                            "handleBlur": [Function],
+                            "handleChange": [Function],
+                            "handleReset": [Function],
+                            "handleSubmit": [Function],
+                            "initialErrors": Object {},
+                            "initialStatus": undefined,
+                            "initialTouched": Object {},
+                            "initialValues": Object {
+                              "order": "desc",
+                              "query": "",
+                              "sort": "",
+                            },
+                            "isSubmitting": false,
+                            "isValid": true,
+                            "isValidating": false,
+                            "registerField": [Function],
+                            "resetForm": [Function],
+                            "setErrors": [Function],
+                            "setFieldError": [Function],
+                            "setFieldTouched": [Function],
+                            "setFieldValue": [Function],
+                            "setFormikState": [Function],
+                            "setStatus": [Function],
+                            "setSubmitting": [Function],
+                            "setTouched": [Function],
+                            "setValues": [Function],
+                            "status": undefined,
+                            "submitCount": 1,
+                            "submitForm": [Function],
+                            "touched": Object {
+                              "order": true,
+                              "query": true,
+                              "sort": true,
+                            },
+                            "unregisterField": [Function],
+                            "validateField": [Function],
+                            "validateForm": [Function],
+                            "validateOnBlur": true,
+                            "validateOnChange": true,
+                            "validateOnMount": false,
+                            "values": Object {
+                              "order": "asc",
+                              "query": "Shoes",
+                              "sort": "forks",
+                            },
+                          }
+                        }
+                        id="order"
+                      >
+                        <Styled(div)
+                          p={3}
+                        >
+                          <div
+                            className="css-1dpv2l8"
+                          >
+                            <ForwardRef
+                              htmlFor="order"
+                            >
+                              <Styled(div)
+                                __css={
+                                  Object {
+                                    "width": "100%",
+                                  }
+                                }
+                                as="label"
+                                htmlFor="order"
+                                tx="forms"
+                                variant="label"
+                              >
+                                <label
+                                  className="css-knfhfe"
+                                  htmlFor="order"
+                                >
+                                  Order
+                                </label>
+                              </Styled(div)>
+                            </ForwardRef>
+                            <ForwardRef
+                              form={
+                                Object {
+                                  "dirty": true,
+                                  "errors": Object {},
+                                  "getFieldHelpers": [Function],
+                                  "getFieldMeta": [Function],
+                                  "getFieldProps": [Function],
+                                  "handleBlur": [Function],
+                                  "handleChange": [Function],
+                                  "handleReset": [Function],
+                                  "handleSubmit": [Function],
+                                  "initialErrors": Object {},
+                                  "initialStatus": undefined,
+                                  "initialTouched": Object {},
+                                  "initialValues": Object {
+                                    "order": "desc",
+                                    "query": "",
+                                    "sort": "",
+                                  },
+                                  "isSubmitting": false,
+                                  "isValid": true,
+                                  "isValidating": false,
+                                  "registerField": [Function],
+                                  "resetForm": [Function],
+                                  "setErrors": [Function],
+                                  "setFieldError": [Function],
+                                  "setFieldTouched": [Function],
+                                  "setFieldValue": [Function],
+                                  "setFormikState": [Function],
+                                  "setStatus": [Function],
+                                  "setSubmitting": [Function],
+                                  "setTouched": [Function],
+                                  "setValues": [Function],
+                                  "status": undefined,
+                                  "submitCount": 1,
+                                  "submitForm": [Function],
+                                  "touched": Object {
+                                    "order": true,
+                                    "query": true,
+                                    "sort": true,
+                                  },
+                                  "unregisterField": [Function],
+                                  "validateField": [Function],
+                                  "validateForm": [Function],
+                                  "validateOnBlur": true,
+                                  "validateOnChange": true,
+                                  "validateOnMount": false,
+                                  "values": Object {
+                                    "order": "asc",
+                                    "query": "Shoes",
+                                    "sort": "forks",
+                                  },
+                                }
+                              }
+                              id="order"
+                              name="order"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              p={2}
+                              value="asc"
+                            >
+                              <Styled(div)>
+                                <div
+                                  className="css-4cffwv"
+                                >
+                                  <Styled(div)
+                                    __css={
+                                      Object {
+                                        "appearance": "none",
+                                        "bg": "transparent",
+                                        "border": "1px solid",
+                                        "borderRadius": "default",
+                                        "color": "inherit",
+                                        "display": "block",
+                                        "fontSize": "inherit",
+                                        "lineHeight": "inherit",
+                                        "p": 2,
+                                        "width": "100%",
+                                      }
+                                    }
+                                    as="select"
+                                    form={
+                                      Object {
+                                        "dirty": true,
+                                        "errors": Object {},
+                                        "getFieldHelpers": [Function],
+                                        "getFieldMeta": [Function],
+                                        "getFieldProps": [Function],
+                                        "handleBlur": [Function],
+                                        "handleChange": [Function],
+                                        "handleReset": [Function],
+                                        "handleSubmit": [Function],
+                                        "initialErrors": Object {},
+                                        "initialStatus": undefined,
+                                        "initialTouched": Object {},
+                                        "initialValues": Object {
+                                          "order": "desc",
+                                          "query": "",
+                                          "sort": "",
+                                        },
+                                        "isSubmitting": false,
+                                        "isValid": true,
+                                        "isValidating": false,
+                                        "registerField": [Function],
+                                        "resetForm": [Function],
+                                        "setErrors": [Function],
+                                        "setFieldError": [Function],
+                                        "setFieldTouched": [Function],
+                                        "setFieldValue": [Function],
+                                        "setFormikState": [Function],
+                                        "setStatus": [Function],
+                                        "setSubmitting": [Function],
+                                        "setTouched": [Function],
+                                        "setValues": [Function],
+                                        "status": undefined,
+                                        "submitCount": 1,
+                                        "submitForm": [Function],
+                                        "touched": Object {
+                                          "order": true,
+                                          "query": true,
+                                          "sort": true,
+                                        },
+                                        "unregisterField": [Function],
+                                        "validateField": [Function],
+                                        "validateForm": [Function],
+                                        "validateOnBlur": true,
+                                        "validateOnChange": true,
+                                        "validateOnMount": false,
+                                        "values": Object {
+                                          "order": "asc",
+                                          "query": "Shoes",
+                                          "sort": "forks",
+                                        },
+                                      }
+                                    }
+                                    id="order"
+                                    name="order"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    p={2}
+                                    tx="forms"
+                                    value="asc"
+                                    variant="select"
+                                  >
+                                    <select
+                                      className="css-1ry9ypc"
+                                      form={
+                                        Object {
+                                          "dirty": true,
+                                          "errors": Object {},
+                                          "getFieldHelpers": [Function],
+                                          "getFieldMeta": [Function],
+                                          "getFieldProps": [Function],
+                                          "handleBlur": [Function],
+                                          "handleChange": [Function],
+                                          "handleReset": [Function],
+                                          "handleSubmit": [Function],
+                                          "initialErrors": Object {},
+                                          "initialStatus": undefined,
+                                          "initialTouched": Object {},
+                                          "initialValues": Object {
+                                            "order": "desc",
+                                            "query": "",
+                                            "sort": "",
+                                          },
+                                          "isSubmitting": false,
+                                          "isValid": true,
+                                          "isValidating": false,
+                                          "registerField": [Function],
+                                          "resetForm": [Function],
+                                          "setErrors": [Function],
+                                          "setFieldError": [Function],
+                                          "setFieldTouched": [Function],
+                                          "setFieldValue": [Function],
+                                          "setFormikState": [Function],
+                                          "setStatus": [Function],
+                                          "setSubmitting": [Function],
+                                          "setTouched": [Function],
+                                          "setValues": [Function],
+                                          "status": undefined,
+                                          "submitCount": 1,
+                                          "submitForm": [Function],
+                                          "touched": Object {
+                                            "order": true,
+                                            "query": true,
+                                            "sort": true,
+                                          },
+                                          "unregisterField": [Function],
+                                          "validateField": [Function],
+                                          "validateForm": [Function],
+                                          "validateOnBlur": true,
+                                          "validateOnChange": true,
+                                          "validateOnMount": false,
+                                          "values": Object {
+                                            "order": "asc",
+                                            "query": "Shoes",
+                                            "sort": "forks",
+                                          },
+                                        }
+                                      }
+                                      id="order"
+                                      name="order"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      value="asc"
+                                    >
+                                      <option
+                                        value="desc"
+                                      >
+                                        Desc
+                                      </option>
+                                      <option
+                                        value="asc"
+                                      >
+                                        Asc
+                                      </option>
+                                    </select>
+                                  </Styled(div)>
+                                  <DownArrow
+                                    sx={
+                                      Object {
+                                        "alignSelf": "center",
+                                        "ml": -28,
+                                        "pointerEvents": "none",
+                                      }
+                                    }
+                                  >
+                                    <SVG
+                                      sx={
+                                        Object {
+                                          "alignSelf": "center",
+                                          "ml": -28,
+                                          "pointerEvents": "none",
+                                        }
+                                      }
+                                    >
+                                      <Styled(div)
+                                        as="svg"
+                                        fill="currentcolor"
+                                        height={24}
+                                        sx={
+                                          Object {
+                                            "alignSelf": "center",
+                                            "ml": -28,
+                                            "pointerEvents": "none",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                        width={24}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <svg
+                                          className="css-6ibwe0"
+                                          fill="currentcolor"
+                                          viewBox="0 0 24 24"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M7 10l5 5 5-5z"
+                                          />
+                                        </svg>
+                                      </Styled(div)>
+                                    </SVG>
+                                  </DownArrow>
+                                </div>
+                              </Styled(div)>
+                            </ForwardRef>
+                          </div>
+                        </Styled(div)>
+                      </OrderSelect>
+                    </Field>
+                    <Styled(div)
+                      p={3}
+                    >
+                      <div
+                        className="css-1dpv2l8"
+                      >
+                        <ForwardRef
+                          disabled={false}
+                          type="submit"
+                          variant="primary"
+                        >
+                          <Styled(div)
+                            __css={
+                              Object {
+                                "appearance": "none",
+                                "bg": "primary",
+                                "border": 0,
+                                "borderRadius": 4,
+                                "color": "white",
+                                "display": "inline-block",
+                                "fontSize": "inherit",
+                                "lineHeight": "inherit",
+                                "px": 3,
+                                "py": 2,
+                                "textAlign": "center",
+                                "textDecoration": "none",
+                              }
+                            }
+                            as="button"
+                            disabled={false}
+                            tx="buttons"
+                            type="submit"
+                            variant="primary"
+                          >
+                            <button
+                              className="css-vhv7r1"
+                              disabled={false}
+                              type="submit"
+                            >
+                              Search
+                            </button>
+                          </Styled(div)>
+                        </ForwardRef>
+                      </div>
+                    </Styled(div)>
+                  </div>
+                </Styled(div)>
+              </form>
+            </Form>
+          </Formik>
+        </div>
+      </Styled(div)>
+      <Styled(div)
+        p={3}
+      >
+        <div
+          className="css-1dpv2l8"
+        >
+          <Styled(div)
+            flexWrap="wrap"
+            justifyContent="center"
+          >
+            <div
+              className="css-1l4c7ao"
+            >
+              <ForwardRef
+                key="6d3fde13-b261-40ff-9248-ad53c9786bb9"
+                m={3}
+                onClick={[Function]}
+                textAlign="center"
+              >
+                <Styled(div)
+                  m={3}
+                  onClick={[Function]}
+                  textAlign="center"
+                  variant="card"
+                >
+                  <div
+                    className="css-mzampo"
+                    onClick={[Function]}
+                  >
+                    <ForwardRef
+                      length={300}
+                      m={2}
+                      src="https://s3.amazonaws.com/uifaces/faces/twitter/jonkspr/128.jpg"
+                      width={300}
+                    >
+                      <Styled(div)
+                        __css={
+                          Object {
+                            "height": "auto",
+                            "maxWidth": "100%",
+                          }
+                        }
+                        as="img"
+                        length={300}
+                        m={2}
+                        src="https://s3.amazonaws.com/uifaces/faces/twitter/jonkspr/128.jpg"
+                        width={300}
+                      >
+                        <img
+                          className="css-13odcik"
+                          src="https://s3.amazonaws.com/uifaces/faces/twitter/jonkspr/128.jpg"
+                        />
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        __css={
+                          Object {
+                            "fontFamily": "heading",
+                            "fontSize": 4,
+                            "fontWeight": "heading",
+                            "lineHeight": "heading",
+                          }
+                        }
+                        as="h2"
+                        m={1}
+                        tx="text"
+                        variant="heading"
+                      >
+                        <h2
+                          className="css-3cyh8r"
+                        >
+                          Una Kulas
+                        </h2>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          8070
+                           stars
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          7735
+                           forks
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          16
+                           open issues
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          updated last 
+                          Fri Aug 02 2019 11:53:26 GMT+0800 (Philippine Standard Time)
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                  </div>
+                </Styled(div)>
+              </ForwardRef>
+              <ForwardRef
+                key="657e7d89-6832-4785-86fe-159485f8ea63"
+                m={3}
+                onClick={[Function]}
+                textAlign="center"
+              >
+                <Styled(div)
+                  m={3}
+                  onClick={[Function]}
+                  textAlign="center"
+                  variant="card"
+                >
+                  <div
+                    className="css-mzampo"
+                    onClick={[Function]}
+                  >
+                    <ForwardRef
+                      length={300}
+                      m={2}
+                      src="https://s3.amazonaws.com/uifaces/faces/twitter/janpalounek/128.jpg"
+                      width={300}
+                    >
+                      <Styled(div)
+                        __css={
+                          Object {
+                            "height": "auto",
+                            "maxWidth": "100%",
+                          }
+                        }
+                        as="img"
+                        length={300}
+                        m={2}
+                        src="https://s3.amazonaws.com/uifaces/faces/twitter/janpalounek/128.jpg"
+                        width={300}
+                      >
+                        <img
+                          className="css-13odcik"
+                          src="https://s3.amazonaws.com/uifaces/faces/twitter/janpalounek/128.jpg"
+                        />
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        __css={
+                          Object {
+                            "fontFamily": "heading",
+                            "fontSize": 4,
+                            "fontWeight": "heading",
+                            "lineHeight": "heading",
+                          }
+                        }
+                        as="h2"
+                        m={1}
+                        tx="text"
+                        variant="heading"
+                      >
+                        <h2
+                          className="css-3cyh8r"
+                        >
+                          Fabiola Hirthe
+                        </h2>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          5423
+                           stars
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          9884
+                           forks
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          959
+                           open issues
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          updated last 
+                          Tue Feb 12 2019 03:51:26 GMT+0800 (Philippine Standard Time)
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                  </div>
+                </Styled(div)>
+              </ForwardRef>
+              <ForwardRef
+                key="3871150a-510f-49dd-a793-7cf2e9e8d6d3"
+                m={3}
+                onClick={[Function]}
+                textAlign="center"
+              >
+                <Styled(div)
+                  m={3}
+                  onClick={[Function]}
+                  textAlign="center"
+                  variant="card"
+                >
+                  <div
+                    className="css-mzampo"
+                    onClick={[Function]}
+                  >
+                    <ForwardRef
+                      length={300}
+                      m={2}
+                      src="https://s3.amazonaws.com/uifaces/faces/twitter/irae/128.jpg"
+                      width={300}
+                    >
+                      <Styled(div)
+                        __css={
+                          Object {
+                            "height": "auto",
+                            "maxWidth": "100%",
+                          }
+                        }
+                        as="img"
+                        length={300}
+                        m={2}
+                        src="https://s3.amazonaws.com/uifaces/faces/twitter/irae/128.jpg"
+                        width={300}
+                      >
+                        <img
+                          className="css-13odcik"
+                          src="https://s3.amazonaws.com/uifaces/faces/twitter/irae/128.jpg"
+                        />
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        __css={
+                          Object {
+                            "fontFamily": "heading",
+                            "fontSize": 4,
+                            "fontWeight": "heading",
+                            "lineHeight": "heading",
+                          }
+                        }
+                        as="h2"
+                        m={1}
+                        tx="text"
+                        variant="heading"
+                      >
+                        <h2
+                          className="css-3cyh8r"
+                        >
+                          Johan White
+                        </h2>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          9116
+                           stars
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          6742
+                           forks
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          296
+                           open issues
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                    <ForwardRef
+                      m={1}
+                    >
+                      <Styled(div)
+                        m={1}
+                        tx="text"
+                      >
+                        <div
+                          className="css-1ee7t57"
+                        >
+                          updated last 
+                          Tue Jul 09 2019 16:44:00 GMT+0800 (Philippine Standard Time)
+                        </div>
+                      </Styled(div)>
+                    </ForwardRef>
+                  </div>
+                </Styled(div)>
+              </ForwardRef>
+            </div>
+          </Styled(div)>
+        </div>
+      </Styled(div)>
+    </div>
+  </Styled(div)>
+</SearchForm>
+`;
+
 exports[`SNAPSHOT TESTS SortSelect Component should render properly 1`] = `
 <Styled(div)
   p={3}

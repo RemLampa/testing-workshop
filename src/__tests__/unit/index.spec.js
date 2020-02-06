@@ -3,7 +3,11 @@ import { shallow } from "enzyme";
 import { Label, Input, Select } from "@rebass/forms";
 import faker from "faker";
 
-import { QueryField, SortSelect } from "../../components/SearchForm";
+import {
+  QueryField,
+  SortSelect,
+  OrderSelect
+} from "../../components/SearchForm";
 
 faker.seed(824);
 
@@ -100,6 +104,56 @@ describe("UNIT TESTS", () => {
 
       expect(options.at(4).text()).toBe("Updated");
       expect(options.at(4).prop("value")).toBe("updated");
+    });
+  });
+
+  describe("OrderSelect Component", () => {
+    const props = {
+      field: {
+        fieldProp: faker.random.words()
+      },
+      testProp: faker.random.words()
+    };
+
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = shallow(<OrderSelect {...props} />);
+    });
+
+    afterEach(() => {
+      wrapper = null;
+    });
+
+    it("should render a proper label", () => {
+      const label = wrapper.find(Label);
+
+      expect(label.exists()).toBeTruthy();
+      expect(label).toHaveLength(1);
+      expect(label.prop("htmlFor")).toBe("order");
+      expect(label.text()).toBe("Order");
+    });
+
+    it("should render a select field", () => {
+      const select = wrapper.find(Select);
+
+      expect(select.exists()).toBeTruthy();
+      expect(select).toHaveLength(1);
+      expect(select.prop("fieldProp")).toBe(props.field.fieldProp);
+      expect(select.prop("testProp")).toBe(props.testProp);
+    });
+
+    it("should render select options", () => {
+      const options = wrapper.find(Select).find("option");
+
+      expect(options.exists()).toBeTruthy();
+      expect(options).toHaveLength(2);
+
+      expect(options.at(0).text()).toBe("Desc");
+      expect(options.at(0).prop("value")).toBe("desc");
+
+      expect(options.at(1).text()).toBe("Asc");
+      expect(options.at(1).prop("value")).toBe("asc");
     });
   });
 });

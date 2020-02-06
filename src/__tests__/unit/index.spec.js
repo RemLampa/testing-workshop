@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { Label, Input } from "@rebass/forms";
+import { Label, Input, Select } from "@rebass/forms";
 import faker from "faker";
 
 import { QueryField, SortSelect } from "../../components/SearchForm";
@@ -55,6 +55,17 @@ describe("UNIT TESTS", () => {
       expect(label).toHaveLength(1);
       expect(label.prop("htmlFor")).toBe("sort");
       expect(label.text()).toBe("Sort");
+    });
+
+    it("should render a select field", () => {
+      const wrapper = shallow(<SortSelect {...props} />);
+
+      const select = wrapper.find(Select);
+
+      expect(select.exists()).toBeTruthy();
+      expect(select).toHaveLength(1);
+      expect(select.prop("fieldProp")).toBe(props.field.fieldProp);
+      expect(select.prop("testProp")).toBe(props.testProp);
     });
   });
 });

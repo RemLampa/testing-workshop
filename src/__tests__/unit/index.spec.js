@@ -16,9 +16,17 @@ describe("UNIT TESTS", () => {
       testProp: faker.random.words()
     };
 
-    it("should render a proper label", () => {
-      const wrapper = shallow(<QueryField {...props} />);
+    let wrapper;
 
+    beforeEach(() => {
+      wrapper = shallow(<QueryField {...props} />);
+    });
+
+    afterEach(() => {
+      wrapper = null;
+    });
+
+    it("should render a proper label", () => {
       const label = wrapper.find(Label);
 
       expect(label.exists()).toBeTruthy();
@@ -28,8 +36,6 @@ describe("UNIT TESTS", () => {
     });
 
     it("should render input field", () => {
-      const wrapper = shallow(<QueryField {...props} />);
-
       const input = wrapper.find(Input);
 
       expect(input.exists()).toBeTruthy();
@@ -46,9 +52,17 @@ describe("UNIT TESTS", () => {
       testProp: faker.random.words()
     };
 
-    it("should render a proper label", () => {
-      const wrapper = shallow(<SortSelect {...props} />);
+    let wrapper;
 
+    beforeEach(() => {
+      wrapper = shallow(<SortSelect {...props} />);
+    });
+
+    afterEach(() => {
+      wrapper = null;
+    });
+
+    it("should render a proper label", () => {
       const label = wrapper.find(Label);
 
       expect(label.exists()).toBeTruthy();
@@ -58,8 +72,6 @@ describe("UNIT TESTS", () => {
     });
 
     it("should render a select field", () => {
-      const wrapper = shallow(<SortSelect {...props} />);
-
       const select = wrapper.find(Select);
 
       expect(select.exists()).toBeTruthy();
@@ -69,8 +81,6 @@ describe("UNIT TESTS", () => {
     });
 
     it("should render select options", () => {
-      const wrapper = shallow(<SortSelect {...props} />);
-
       const options = wrapper.find(Select).find("option");
 
       expect(options.exists()).toBeTruthy();

@@ -67,5 +67,29 @@ describe("UNIT TESTS", () => {
       expect(select.prop("fieldProp")).toBe(props.field.fieldProp);
       expect(select.prop("testProp")).toBe(props.testProp);
     });
+
+    it("should render select options", () => {
+      const wrapper = shallow(<SortSelect {...props} />);
+
+      const options = wrapper.find(Select).find("option");
+
+      expect(options.exists()).toBeTruthy();
+      expect(options).toHaveLength(5);
+
+      expect(options.at(0).text()).toBe("Best Match");
+      expect(options.at(0).prop("value")).toBe("");
+
+      expect(options.at(1).text()).toBe("Stars");
+      expect(options.at(1).prop("value")).toBe("stars");
+
+      expect(options.at(2).text()).toBe("Forks");
+      expect(options.at(2).prop("value")).toBe("forks");
+
+      expect(options.at(3).text()).toBe("Help Wanted Issues");
+      expect(options.at(3).prop("value")).toBe("help-wanted-issues");
+
+      expect(options.at(4).text()).toBe("Updated");
+      expect(options.at(4).prop("value")).toBe("updated");
+    });
   });
 });

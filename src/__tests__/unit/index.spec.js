@@ -26,5 +26,15 @@ describe("UNIT TESTS", () => {
       expect(label.prop("htmlFor")).toBe("query");
       expect(label.text()).toBe("Keywords");
     });
+
+    it("should render input field", () => {
+      const wrapper = shallow(<QueryField {...props} />);
+
+      const input = wrapper.find(Input);
+
+      expect(input.exists()).toBeTruthy();
+      expect(input).toHaveLength(1);
+      expect(input.prop("fieldProp")).toEqual(props.field.fieldProp);
+    });
   });
 });

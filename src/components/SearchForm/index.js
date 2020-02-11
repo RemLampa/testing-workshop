@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
 import { Box, Flex, Heading, Button, Card, Image, Text } from "rebass";
@@ -35,7 +35,7 @@ export const OrderSelect = ({ field, ...props }) => (
 );
 
 const SearchForm = () => {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = React.useState([]);
 
   const handleSubmit = async ({ query, sort, order }, { setSubmitting }) => {
     if (!query) {

@@ -4,6 +4,7 @@ import { Label, Input, Select } from "@rebass/forms";
 import { Button } from "rebass";
 import faker from "faker";
 import { Formik, Form, Field } from "formik";
+import axios from "axios";
 
 import SearchForm, {
   QueryField,
@@ -12,6 +13,46 @@ import SearchForm, {
 } from "../../components/SearchForm";
 
 faker.seed(824);
+
+const items = [
+  {
+    id: faker.random.uuid(),
+    name: faker.name.findName(),
+    owner: {
+      avatar_url: faker.image.avatar()
+    },
+    stargazers_count: faker.random.number(10000),
+    forks_count: faker.random.number(10000),
+    open_issues_count: faker.random.number(1000),
+    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString()
+  },
+  {
+    id: faker.random.uuid(),
+    name: faker.name.findName(),
+    owner: {
+      avatar_url: faker.image.avatar()
+    },
+    stargazers_count: faker.random.number(10000),
+    forks_count: faker.random.number(10000),
+    open_issues_count: faker.random.number(1000),
+    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString()
+  },
+  {
+    id: faker.random.uuid(),
+    name: faker.name.findName(),
+    owner: {
+      avatar_url: faker.image.avatar()
+    },
+    stargazers_count: faker.random.number(10000),
+    forks_count: faker.random.number(10000),
+    open_issues_count: faker.random.number(1000),
+    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString()
+  }
+];
+
+axios.get.mockResolvedValue({
+  data: { items }
+});
 
 describe("UNIT TESTS", () => {
   describe("QueryField Component", () => {
@@ -322,6 +363,43 @@ describe("UNIT TESTS", () => {
           expect(buttonWrapper.prop("disabled")).toBe(true);
           expect(buttonWrapper.text()).toBe("Fetching Repos...");
         });
+      });
+    });
+
+    describe("Form Submission", () => {
+      const setState = jest.fn();
+      React.useState = jest.fn().mockImplementation(init => [init, setState]);
+
+      afterEach(() => {
+        jest.clearAllMocks();
+      });
+
+      it("should fetch for a list of repositories from GitHub upon form submission", async () => {
+        const formikWrapper = wrapper.find(Formik);
+
+        const handleSubmit = formikWrapper.prop("onSubmit");
+
+        const values = {
+          query: faker.random.word(),
+          sort: faker.random.word(),
+          order: faker.random.word()
+        };
+
+        const formikBag = {
+          setSubmitting: jest.fn()
+        };
+
+        await handleSubmit(values, formikBag);
+
+        expect(axios.get).toHaveBeenCalledTimes(1);
+
+        const requestString = `https://api.github.com/search/repositories?q=${values.query}&sort=${values.sort}&order=${values.order}`;
+        expect(axios.get).toHaveBeenCalledWith(requestString);
+
+        expect(setState).toHaveBeenCalledTimes(1);
+        expect(setState).toHaveBeenCalledWith(items);
+
+        expect(formikBag.setSubmitting).toHaveBeenCalledTimes(1);
       });
     });
   });

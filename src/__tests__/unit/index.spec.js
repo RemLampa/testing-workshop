@@ -2,8 +2,9 @@ import React from "react";
 import { shallow } from "enzyme";
 import { Label, Input, Select } from "@rebass/forms";
 import faker from "faker";
+import { Formik, Form, Field } from "formik";
 
-import {
+import SearchForm, {
   QueryField,
   SortSelect,
   OrderSelect
@@ -154,6 +155,39 @@ describe("UNIT TESTS", () => {
 
       expect(options.at(1).text()).toBe("Asc");
       expect(options.at(1).prop("value")).toBe("asc");
+    });
+  });
+
+  describe("SearchForm Component", () => {
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = shallow(<SearchForm />);
+    });
+
+    afterEach(() => {
+      wrapper = null;
+    });
+
+    it("should render a Formik component instance", () => {
+      const formikWrapper = wrapper.find(Formik);
+
+      expect(formikWrapper.exists()).toBeTruthy();
+      expect(formikWrapper.length).toBe(1);
+
+      const expectedInitialValues = {
+        query: "",
+        sort: "",
+        order: "desc"
+      };
+
+      expect(formikWrapper.prop("initialValues")).toStrictEqual(
+        expectedInitialValues
+      );
+
+      expect(formikWrapper.prop("onSubmit")).toStrictEqual(
+        expect.any(Function)
+      );
     });
   });
 });

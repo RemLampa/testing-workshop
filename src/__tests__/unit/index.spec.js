@@ -189,5 +189,72 @@ describe("UNIT TESTS", () => {
         expect.any(Function)
       );
     });
+
+    describe("Formik Render Props", () => {
+      let renderPropsWrapper;
+
+      beforeEach(() => {
+        const values = {
+          query: faker.random.word(),
+          sort: "stars",
+          order: "desc"
+        };
+
+        const isSubmitting = false;
+
+        renderPropsWrapper = wrapper.find(Formik).renderProp("children")({
+          values,
+          isSubmitting
+        });
+      });
+
+      it("should exist", () => {
+        expect(renderPropsWrapper.exists()).toBeTruthy();
+        expect(renderPropsWrapper.length).toBe(1);
+      });
+
+      it("should render a form", () => {
+        const formWrapper = renderPropsWrapper.find(Form);
+
+        expect(formWrapper.exists()).toBeTruthy();
+        expect(formWrapper.length).toBe(1);
+      });
+
+      it("should render three input fields", () => {
+        const fieldWrapper = renderPropsWrapper.find(Form).find(Field);
+
+        expect(fieldWrapper.exists()).toBeTruthy();
+        expect(fieldWrapper.length).toBe(3);
+
+        const expectedQueryFieldProps = {
+          id: "query",
+          name: "query",
+          placeholder: "javascript",
+          component: QueryField,
+          required: true
+        };
+        expect(fieldWrapper.at(0).props()).toStrictEqual(
+          expectedQueryFieldProps
+        );
+
+        const expectedSortFieldProps = {
+          id: "sort",
+          name: "sort",
+          component: SortSelect
+        };
+        expect(fieldWrapper.at(1).props()).toStrictEqual(
+          expectedSortFieldProps
+        );
+
+        const expectedOrderFieldProps = {
+          id: "order",
+          name: "order",
+          component: OrderSelect
+        };
+        expect(fieldWrapper.at(2).props()).toStrictEqual(
+          expectedOrderFieldProps
+        );
+      });
+    });
   });
 });

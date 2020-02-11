@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { Label, Input, Select } from "@rebass/forms";
+import { Button } from "rebass";
 import faker from "faker";
 import { Formik, Form, Field } from "formik";
 
@@ -254,6 +255,73 @@ describe("UNIT TESTS", () => {
         expect(fieldWrapper.at(2).props()).toStrictEqual(
           expectedOrderFieldProps
         );
+      });
+
+      it("should render a submit button", () => {
+        const buttonWrapper = renderPropsWrapper.find(Form).find(Button);
+
+        expect(buttonWrapper.exists()).toBeTruthy();
+        expect(buttonWrapper.length).toBe(1);
+        expect(buttonWrapper.prop("type")).toBe("submit");
+        expect(buttonWrapper.prop("variant")).toBe("primary");
+      });
+
+      describe("Submit Button", () => {
+        function renderButton({ values, isSubmitting }) {
+          return wrapper
+            .find(Formik)
+            .renderProp("children")({
+              values,
+              isSubmitting
+            })
+            .find(Form)
+            .find(Button);
+        }
+
+        it("should be disabled when query field is empty", () => {
+          const values = {
+            query: "",
+            sort: "stars",
+            order: "desc"
+          };
+
+          const isSubmitting = false;
+
+          const buttonWrapper = renderButton({ values, isSubmitting });
+
+          expect(buttonWrapper.prop("disabled")).toBe(true);
+          expect(buttonWrapper.text()).toBe("Search");
+        });
+
+        it("should be enabled when user types into the query field", () => {
+          const values = {
+            query: faker.random.word(),
+            sort: "stars",
+            order: "desc"
+          };
+
+          const isSubmitting = false;
+
+          const buttonWrapper = renderButton({ values, isSubmitting });
+
+          expect(buttonWrapper.prop("disabled")).toBe(false);
+          expect(buttonWrapper.text()).toBe("Search");
+        });
+
+        it("should be disabled when form is submitting", () => {
+          const values = {
+            query: faker.random.word(),
+            sort: "stars",
+            order: "desc"
+          };
+
+          const isSubmitting = true;
+
+          const buttonWrapper = renderButton({ values, isSubmitting });
+
+          expect(buttonWrapper.prop("disabled")).toBe(true);
+          expect(buttonWrapper.text()).toBe("Fetching Repos...");
+        });
       });
     });
   });

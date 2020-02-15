@@ -112,6 +112,7 @@ const SearchForm = () => {
               onClick={() => {
                 window.location.href = repo.html_url;
               }}
+              data-testid={repo.id}
             >
               <Image
                 alt={repo.name}

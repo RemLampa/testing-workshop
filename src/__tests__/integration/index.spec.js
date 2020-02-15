@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, wait } from "@testing-library/react";
+import { render, fireEvent, wait, act } from "@testing-library/react";
 import faker from "faker";
 import axios from "axios";
 
@@ -17,7 +17,8 @@ const items = [
     stargazers_count: faker.random.number(10000),
     forks_count: faker.random.number(10000),
     open_issues_count: faker.random.number(1000),
-    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString()
+    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString(),
+    html_url: faker.internet.url()
   },
   {
     id: faker.random.uuid(),
@@ -28,7 +29,8 @@ const items = [
     stargazers_count: faker.random.number(10000),
     forks_count: faker.random.number(10000),
     open_issues_count: faker.random.number(1000),
-    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString()
+    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString(),
+    html_url: faker.internet.url()
   },
   {
     id: faker.random.uuid(),
@@ -39,7 +41,8 @@ const items = [
     stargazers_count: faker.random.number(10000),
     forks_count: faker.random.number(10000),
     open_issues_count: faker.random.number(1000),
-    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString()
+    updated_at: faker.date.between("2019-01-01", "2019-12-31").toString(),
+    html_url: faker.internet.url()
   }
 ];
 
@@ -210,6 +213,70 @@ describe("INTEGRATION TESTS", () => {
         expect(updateDateElement[actualListIndex].textContent).toBe(
           updateDateText
         );
+      });
+    });
+
+    describe("Repository List", () => {
+      beforeEach(() => {
+        global.window = Object.create(window);
+        Object.defineProperty(window, "location", {
+          value: {
+            href: ""
+          }
+        });
+      });
+
+      it("should have elements that redirect to the repository links when clicked", async () => {
+        const { getByLabelText, getByText, getByTestId } = render(
+          <SearchForm />
+        );
+
+        const inputField = getByLabelText(/keywords/i);
+        const query = faker.random.word();
+        act(() => {
+          fireEvent.change(inputField, {
+            target: {
+              value: query
+            }
+          });
+        });
+
+        const sortDropdown = getByLabelText(/sort/i);
+        const selectedSort = "forks";
+        act(() => {
+          fireEvent.change(sortDropdown, {
+            target: {
+              value: selectedSort
+            }
+          });
+        });
+
+        const orderDropdown = getByLabelText(/order/i);
+        const selectedOrder = "asc";
+        act(() => {
+          fireEvent.change(orderDropdown, {
+            target: {
+              value: selectedOrder
+            }
+          });
+        });
+
+        const searchButton = getByText(/^search$/i);
+        await act(async () => {
+          fireEvent.click(searchButton);
+        });
+
+        items.forEach(repo => {
+          const repoCard = getByTestId(repo.id);
+
+          expect(repoCard).toBeTruthy();
+
+          act(() => {
+            fireEvent.click(repoCard);
+          });
+
+          expect(window.location.href).toBe(repo.html_url);
+        });
       });
     });
   });

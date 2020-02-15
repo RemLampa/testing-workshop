@@ -1323,12 +1323,14 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
               className="css-1l4c7ao"
             >
               <ForwardRef
+                data-testid="6d3fde13-b261-40ff-9248-ad53c9786bb9"
                 key="6d3fde13-b261-40ff-9248-ad53c9786bb9"
                 m={3}
                 onClick={[Function]}
                 textAlign="center"
               >
                 <Styled(div)
+                  data-testid="6d3fde13-b261-40ff-9248-ad53c9786bb9"
                   m={3}
                   onClick={[Function]}
                   textAlign="center"
@@ -1336,6 +1338,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                 >
                   <div
                     className="css-mzampo"
+                    data-testid="6d3fde13-b261-40ff-9248-ad53c9786bb9"
                     onClick={[Function]}
                   >
                     <ForwardRef
@@ -1454,12 +1457,14 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                 </Styled(div)>
               </ForwardRef>
               <ForwardRef
+                data-testid="657e7d89-6832-4785-86fe-159485f8ea63"
                 key="657e7d89-6832-4785-86fe-159485f8ea63"
                 m={3}
                 onClick={[Function]}
                 textAlign="center"
               >
                 <Styled(div)
+                  data-testid="657e7d89-6832-4785-86fe-159485f8ea63"
                   m={3}
                   onClick={[Function]}
                   textAlign="center"
@@ -1467,6 +1472,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                 >
                   <div
                     className="css-mzampo"
+                    data-testid="657e7d89-6832-4785-86fe-159485f8ea63"
                     onClick={[Function]}
                   >
                     <ForwardRef
@@ -1585,12 +1591,14 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                 </Styled(div)>
               </ForwardRef>
               <ForwardRef
+                data-testid="3871150a-510f-49dd-a793-7cf2e9e8d6d3"
                 key="3871150a-510f-49dd-a793-7cf2e9e8d6d3"
                 m={3}
                 onClick={[Function]}
                 textAlign="center"
               >
                 <Styled(div)
+                  data-testid="3871150a-510f-49dd-a793-7cf2e9e8d6d3"
                   m={3}
                   onClick={[Function]}
                   textAlign="center"
@@ -1598,6 +1606,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                 >
                   <div
                     className="css-mzampo"
+                    data-testid="3871150a-510f-49dd-a793-7cf2e9e8d6d3"
                     onClick={[Function]}
                   >
                     <ForwardRef

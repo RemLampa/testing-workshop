@@ -1339,6 +1339,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                     onClick={[Function]}
                   >
                     <ForwardRef
+                      alt="Una Kulas"
                       length={300}
                       m={2}
                       src="https://s3.amazonaws.com/uifaces/faces/twitter/jonkspr/128.jpg"
@@ -1351,6 +1352,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                             "maxWidth": "100%",
                           }
                         }
+                        alt="Una Kulas"
                         as="img"
                         length={300}
                         m={2}
@@ -1358,6 +1360,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                         width={300}
                       >
                         <img
+                          alt="Una Kulas"
                           className="css-13odcik"
                           src="https://s3.amazonaws.com/uifaces/faces/twitter/jonkspr/128.jpg"
                         />
@@ -1467,6 +1470,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                     onClick={[Function]}
                   >
                     <ForwardRef
+                      alt="Fabiola Hirthe"
                       length={300}
                       m={2}
                       src="https://s3.amazonaws.com/uifaces/faces/twitter/janpalounek/128.jpg"
@@ -1479,6 +1483,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                             "maxWidth": "100%",
                           }
                         }
+                        alt="Fabiola Hirthe"
                         as="img"
                         length={300}
                         m={2}
@@ -1486,6 +1491,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                         width={300}
                       >
                         <img
+                          alt="Fabiola Hirthe"
                           className="css-13odcik"
                           src="https://s3.amazonaws.com/uifaces/faces/twitter/janpalounek/128.jpg"
                         />
@@ -1595,6 +1601,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                     onClick={[Function]}
                   >
                     <ForwardRef
+                      alt="Johan White"
                       length={300}
                       m={2}
                       src="https://s3.amazonaws.com/uifaces/faces/twitter/irae/128.jpg"
@@ -1607,6 +1614,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                             "maxWidth": "100%",
                           }
                         }
+                        alt="Johan White"
                         as="img"
                         length={300}
                         m={2}
@@ -1614,6 +1622,7 @@ exports[`SNAPSHOT TESTS SearchForm Component should render repositories upon for
                         width={300}
                       >
                         <img
+                          alt="Johan White"
                           className="css-13odcik"
                           src="https://s3.amazonaws.com/uifaces/faces/twitter/irae/128.jpg"
                         />

@@ -123,5 +123,94 @@ describe("INTEGRATION TESTS", () => {
       const expectedFetchArgument = `https://api.github.com/search/repositories?q=${query}&sort=${selectedSort}&order=${selectedOrder}`;
       expect(axios.get).toHaveBeenCalledWith(expectedFetchArgument);
     });
+
+    it("should render a list of repositories upon successful search request", async () => {
+      const { getByLabelText, getByText, getByAltText, getAllByText } = render(
+        <SearchForm />
+      );
+
+      const inputField = getByLabelText(/keywords/i);
+      const query = faker.random.word();
+      fireEvent.change(inputField, {
+        target: {
+          value: query
+        }
+      });
+
+      await wait();
+
+      const sortDropdown = getByLabelText(/sort/i);
+      const selectedSort = "forks";
+      fireEvent.change(sortDropdown, {
+        target: {
+          value: selectedSort
+        }
+      });
+
+      await wait();
+
+      const orderDropdown = getByLabelText(/order/i);
+      const selectedOrder = "asc";
+      fireEvent.change(orderDropdown, {
+        target: {
+          value: selectedOrder
+        }
+      });
+
+      await wait();
+
+      const searchButton = getByText(/^search$/i);
+      fireEvent.click(searchButton);
+
+      items.forEach((repo, i) => {
+        expect(() => getByAltText(repo.name)).toThrow();
+
+        expect(() => getByText(repo.name)).toThrow();
+      });
+
+      const starsElement = getAllByText(/stars/i);
+      expect(starsElement.length).toBe(1);
+
+      const forksElement = getAllByText(/forks/i);
+      expect(forksElement.length).toBe(1);
+
+      const issuesElement = getAllByText(/issues/i);
+      expect(issuesElement.length).toBe(1);
+
+      const updateDateElement = getAllByText(/updated/i);
+      expect(updateDateElement.length).toBe(1);
+
+      await wait();
+
+      items.forEach((repo, i) => {
+        const avatarElement = getByAltText(repo.name);
+        expect(avatarElement.src).toBe(repo.owner.avatar_url);
+
+        const nameElement = getByText(repo.name);
+        expect(nameElement).toBeTruthy();
+        expect(nameElement.textContent).toBe(repo.name);
+
+        // due to options text in sort dropdown
+        const actualListIndex = i + 1;
+
+        const starsElement = getAllByText(/stars/i);
+        const starsText = `${repo.stargazers_count} stars`;
+        expect(starsElement[actualListIndex].textContent).toBe(starsText);
+
+        const forksElement = getAllByText(/forks/i);
+        const forksText = `${repo.forks_count} forks`;
+        expect(forksElement[actualListIndex].textContent).toBe(forksText);
+
+        const issuesElement = getAllByText(/issues/i);
+        const issuesText = `${repo.open_issues_count} open issues`;
+        expect(issuesElement[actualListIndex].textContent).toBe(issuesText);
+
+        const updateDateElement = getAllByText(/updated/i);
+        const updateDateText = `updated last ${repo.updated_at}`;
+        expect(updateDateElement[actualListIndex].textContent).toBe(
+          updateDateText
+        );
+      });
+    });
   });
 });

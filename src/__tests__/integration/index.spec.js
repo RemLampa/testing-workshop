@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent, wait } from "@testing-library/react";
 import faker from "faker";
 import axios from "axios";
 
@@ -74,6 +74,54 @@ describe("INTEGRATION TESTS", () => {
       const searchButton = getByText(/^search$/i);
       expect(searchButton).toBeTruthy();
       expect(searchButton.textContent).toBe("Search");
+    });
+
+    it("should execute a GET request when form is submitted", async () => {
+      const { getByLabelText, getByText } = render(<SearchForm />);
+
+      const inputField = getByLabelText(/keywords/i);
+      const query = faker.random.word();
+      fireEvent.change(inputField, {
+        target: {
+          value: query
+        }
+      });
+
+      await wait();
+
+      const sortDropdown = getByLabelText(/sort/i);
+      const selectedSort = "forks";
+      fireEvent.change(sortDropdown, {
+        target: {
+          value: selectedSort
+        }
+      });
+
+      await wait();
+
+      const orderDropdown = getByLabelText(/order/i);
+      const selectedOrder = "asc";
+      fireEvent.change(orderDropdown, {
+        target: {
+          value: selectedOrder
+        }
+      });
+
+      await wait();
+
+      const searchButton = getByText(/^search$/i);
+      fireEvent.click(searchButton);
+
+      expect(searchButton.textContent).toBe("Fetching Repos...");
+
+      await wait();
+
+      expect(searchButton.textContent).toBe("Search");
+
+      expect(axios.get).toHaveBeenCalledTimes(1);
+
+      const expectedFetchArgument = `https://api.github.com/search/repositories?q=${query}&sort=${selectedSort}&order=${selectedOrder}`;
+      expect(axios.get).toHaveBeenCalledWith(expectedFetchArgument);
     });
   });
 });

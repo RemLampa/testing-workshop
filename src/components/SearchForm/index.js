@@ -114,6 +114,7 @@ const SearchForm = () => {
               }}
             >
               <Image
+                alt={repo.name}
                 src={repo.owner.avatar_url}
                 width={300}
                 length={300}

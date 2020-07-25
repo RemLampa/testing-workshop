@@ -13,7 +13,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "^3.4.1",
-    "rebass": "^4.0.7"
+    "rebass": "^4.0.7",
+    "swr": "^0.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
 import { Box, Flex, Heading, Button, Card, Image, Text } from "rebass";
 import { Label, Input, Select } from "@rebass/forms";
+import request from 'graphql-request';
 
 const QueryField = ({ field, ...props }) => (
   <Box p={3}>
@@ -34,8 +35,28 @@ const OrderSelect = ({ field, ...props }) => (
   </Box>
 );
 
+const USER_QUERY = `
+  query USER($id: ID!) {
+    user(id: $id) {
+      username
+      email
+    }
+  }
+`;
+
 const SearchForm = () => {
   const [repos, setRepos] = useState([]);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const data = await request('https://graphqlzero.almansi.me/api', USER_QUERY, { id: 1 });
+
+      setUser(data.user);
+    };
+
+    fetchUser();
+  }, [])
 
   const handleSubmit = async ({ query, sort, order }, { setSubmitting }) => {
     if (!query) {
@@ -63,6 +84,11 @@ const SearchForm = () => {
       <Heading p={3} fontSize={[5, 6, 7]} color="primary" textAlign="center">
         GitHub Respositories Search
       </Heading>
+      <Box p={3}>
+        <Text m={1} textAlign="center" fontSize={5}>
+          {user ? `Hello, ${user.username}! (${user.email})` : 'Fetching user...'}
+        </Text>
+      </Box>
       <Box p={3}>
         <Formik
           onSubmit={handleSubmit}

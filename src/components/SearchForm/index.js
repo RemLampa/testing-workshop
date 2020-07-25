@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
 import { Box, Flex, Heading, Button, Card, Image, Text } from "rebass";
 import { Label, Input, Select } from "@rebass/forms";
 import request from 'graphql-request';
+import useSWR from 'swr';
 
 const QueryField = ({ field, ...props }) => (
   <Box p={3}>
@@ -46,17 +47,7 @@ const USER_QUERY = `
 
 const SearchForm = () => {
   const [repos, setRepos] = useState([]);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const data = await request('https://graphqlzero.almansi.me/api', USER_QUERY, { id: 1 });
-
-      setUser(data.user);
-    };
-
-    fetchUser();
-  }, [])
+  const { data } = useSWR(USER_QUERY, () => request('https://graphqlzero.almansi.me/api', USER_QUERY, { id: 1 }));
 
   const handleSubmit = async ({ query, sort, order }, { setSubmitting }) => {
     if (!query) {
@@ -86,7 +77,7 @@ const SearchForm = () => {
       </Heading>
       <Box p={3}>
         <Text m={1} textAlign="center" fontSize={5}>
-          {user ? `Hello, ${user.username}! (${user.email})` : 'Fetching user...'}
+          {data ? `Hello, ${data.user.username}! (${data.user.email})` : 'Fetching user...'}
         </Text>
       </Box>
       <Box p={3}>

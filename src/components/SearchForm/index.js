@@ -1,40 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Formik, Form, Field } from "formik";
+import { useForm } from "react-hook-form";
 import { Box, Flex, Heading, Button, Card, Image, Text } from "rebass";
 import { Label, Input, Select } from "@rebass/forms";
 import request from 'graphql-request';
 import useSWR from 'swr';
-
-const QueryField = ({ field, ...props }) => (
-  <Box p={3}>
-    <Label htmlFor="query">Keywords</Label>
-    <Input {...field} {...props} />
-  </Box>
-);
-
-const SortSelect = ({ field, ...props }) => (
-  <Box p={3}>
-    <Label htmlFor="sort">Sort</Label>
-    <Select {...field} {...props}>
-      <option value="">Best Match</option>
-      <option value="stars">Stars</option>
-      <option value="forks">Forks</option>
-      <option value="help-wanted-issues">Help Wanted Issues</option>
-      <option value="updated">Updated</option>
-    </Select>
-  </Box>
-);
-
-const OrderSelect = ({ field, ...props }) => (
-  <Box p={3}>
-    <Label htmlFor="order">Order</Label>
-    <Select p={2} {...field} {...props}>
-      <option value="desc">Desc</option>
-      <option value="asc">Asc</option>
-    </Select>
-  </Box>
-);
 
 const USER_QUERY = `
   query USER($id: ID!) {
@@ -47,20 +17,23 @@ const USER_QUERY = `
 
 const SearchForm = () => {
   const [repos, setRepos] = useState([]);
+  const [isSubmitting, setSubmitting] = useState(false);
   const { data } = useSWR(USER_QUERY, () => request('https://graphqlzero.almansi.me/api', USER_QUERY, { id: 1 }));
+  const { register, handleSubmit, watch } = useForm();
 
-  const handleSubmit = async ({ query, sort, order }, { setSubmitting }) => {
+  const fetchRepos = async ({ query, sort, order }) => {
     if (!query) {
       return;
     }
+
+    setSubmitting(true);
 
     const { data } = await axios.get(
       `https://api.github.com/search/repositories?q=${query}&sort=${sort}&order=${order}`
     );
 
-    setRepos(data.items);
-
     setSubmitting(false);
+    setRepos(data.items);
   };
 
   return (
@@ -81,49 +54,57 @@ const SearchForm = () => {
         </Text>
       </Box>
       <Box p={3}>
-        <Formik
-          onSubmit={handleSubmit}
-          initialValues={{
-            query: "",
-            sort: "",
-            order: "desc"
-          }}
-        >
-          {({ values, isSubmitting }) => (
-            <Form>
-              <Flex
-                flexWrap="wrap"
-                justifyContent="center"
-                alignItems="flex-end"
-              >
-                <Field
+        <form onSubmit={handleSubmit(fetchRepos)}>
+          <Flex
+            flexWrap="wrap"
+            justifyContent="center"
+            alignItems="flex-end"
+          >
+            <Box p={3}>
+              <Label htmlFor="query">Keywords</Label>
+                <Input
                   id="query"
                   name="query"
                   placeholder="javascript"
-                  component={QueryField}
-                  required={true}
+                  ref={register({ required: true })}
                 />
-                <Field id="sort" name="sort" component={SortSelect} />
-                <Field id="order" name="order" component={OrderSelect} />
-                <Box p={3}>
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    disabled={isSubmitting || !values.query}
-                  >
-                    {isSubmitting ? "Fetching Repos..." : "Search"}
-                  </Button>
-                </Box>
-              </Flex>
-            </Form>
-          )}
-        </Formik>
+            </Box>
+            <Box p={3}>
+              <Label htmlFor="sort">Sort</Label>
+              <Select p={2} id="sort" name="sort" ref={register}>
+                <option value="">Best Match</option>
+                <option value="stars">Stars</option>
+                <option value="forks">Forks</option>
+                <option value="help-wanted-issues">Help Wanted Issues</option>
+                <option value="updated">Updated</option>
+              </Select>
+            </Box>
+            <Box p={3}>
+              <Label htmlFor="order">Order</Label>
+              <Select p={2} id="order" name="order" ref={register}>
+                <option value="desc">Desc</option>
+                <option value="asc">Asc</option>
+              </Select>
+            </Box>
+            <Box p={3}>
+              <Button
+                type="submit"
+                variant="primary"
+                style={{ cursor: "pointer" }}
+                disabled={isSubmitting || !watch("query")}
+              >
+                {isSubmitting ? "Fetching Repos..." : "Search"}
+              </Button>
+            </Box>
+          </Flex>
+        </form>
       </Box>
       <Box p={3}>
         <Flex flexWrap="wrap" justifyContent="center">
           {repos.map(repo => (
             <Card
               key={repo.id}
+              data-testid={repo.id}
               m={3}
               textAlign="center"
               onClick={() => {
@@ -132,6 +113,7 @@ const SearchForm = () => {
             >
               <Image
                 src={repo.owner.avatar_url}
+                alt={repo.name}
                 width={300}
                 length={300}
                 m={2}

@@ -12,6 +12,7 @@
     "graphql-request": "^2.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-hook-form": "^6.0.8",
     "react-scripts": "^3.4.1",
     "rebass": "^4.0.7",
     "swr": "^0.2.3"

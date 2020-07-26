@@ -2,7 +2,8 @@ import React from "react";
 import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import faker from "faker";
-import axios from "axios";
+import { rest, graphql } from "msw";
+import { setupServer } from "msw/node";
 
 import SearchForm from ".";
 
@@ -47,9 +48,42 @@ const items = [
   }
 ];
 
-axios.get.mockResolvedValue({
-  data: { items }
-});
+const fakeUser = {
+  username: faker.internet.userName(),
+  email: faker.internet.email(),
+}
+
+export const mockHandlers = [
+  graphql.query('USER', (req, res, ctx) => {
+    // console.log('received by MSW', { req });
+
+    return res(
+      ctx.delay(1000),
+      ctx.data({
+        user: fakeUser,
+      }),
+    );
+  }),
+  rest.get('https://api.github.com/search/repositories', (req, res, ctx) => {
+    // console.log('received by MSW', { req });
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        items,
+      }),
+    );
+  }),
+];
+
+const fakeServer = setupServer(...mockHandlers);
+
+beforeAll(() => fakeServer.listen());
+
+afterEach(() => fakeServer.resetHandlers());
+
+afterAll(() => fakeServer.close());
+
 
 describe("SearchForm Component", () => {
   it("should have a header title", () => {
@@ -79,6 +113,15 @@ describe("SearchForm Component", () => {
     expect(searchButton.textContent).toBe("Search");
   });
 
+  it("should fetch and render user details", async () => {
+    const { getByText } = render(<SearchForm />);
+
+    const userSection = getByText(/user/i);
+    expect(userSection.textContent).toBe('Fetching user...');
+
+    await waitFor(() => expect(userSection.textContent).toBe(`Hello, ${fakeUser.username}! (${fakeUser.email})`));
+  });
+
   it("should execute a GET request when form is submitted", async () => {
     const { getByLabelText, getByText } = render(<SearchForm />);
 
@@ -101,12 +144,7 @@ describe("SearchForm Component", () => {
 
     await waitFor(() => expect(searchButton.textContent).toBe("Fetching Repos..."));
 
-    expect(searchButton.textContent).toBe("Search");
-
-    expect(axios.get).toHaveBeenCalledTimes(1);
-
-    const expectedFetchArgument = `https://api.github.com/search/repositories?q=${query}&sort=${selectedSort}&order=${selectedOrder}`;
-    expect(axios.get).toHaveBeenCalledWith(expectedFetchArgument);
+    await waitFor(() => expect(searchButton.textContent).toBe("Search"));
   });
 
   it("should render a list of repositories upon successful search request", async () => {
